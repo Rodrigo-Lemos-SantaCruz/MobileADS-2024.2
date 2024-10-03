@@ -61,6 +61,14 @@ const Lista = function() {
                 .catch(err => console.log(err))
             console.log('Fora do then')
         }
+        function testarAPI() {
+            fetch('https://www.fruityvice.com/api/fruit/all')
+                .then(data=>data.json())
+                .then(obj=> {
+                    setFrutas(obj.map(item => {return {nome: item.name, qtd: Math.floor(Math.random() * 11)}}))
+                })
+                .catch(err => console.error(err))
+        }
     const [frutas, setFrutas] = useState([])
     return(
         <View style={styles.container}>
@@ -75,6 +83,7 @@ const Lista = function() {
             <Button title="Chamar Callback" onPress={()=>buscarDadosCallback(callbackDeExibicaoDeDados)} />
             <Button title="Chamar Promise" onPress={testarPromise} />
             <Button title="Chamar Await" onPress={testarAwait} />
+            <Button title="Chamar API" onPress={testarAPI} />
         </View>
     )
 }
