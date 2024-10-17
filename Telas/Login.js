@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -41,6 +41,7 @@ export default function Login() {
       <TextInput placeholder='Senha' onChangeText={(text)=>setSenha(text)} />
       <Button title='Calculadora' onPress={()=>ValidaComFirebase('CalculaNota')} />
       <Button title='Lista' onPress={()=>ValidaComFirebase('Lista')} />
+      <Button title='Cadastrar' onPress={()=>navigation.navigate('Criar')} />
       <StatusBar style="auto" />
     </View>
   );

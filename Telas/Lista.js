@@ -80,10 +80,12 @@ const Lista = function() {
                     //console.log(item.item.nome)
                     return(<Fruta nome={item.nome} qtd={item.qtd} />)}}
             />
-            <Button title="Chamar Callback" onPress={()=>buscarDadosCallback(callbackDeExibicaoDeDados)} />
-            <Button title="Chamar Promise" onPress={testarPromise} />
-            <Button title="Chamar Await" onPress={testarAwait} />
-            <Button title="Chamar API" onPress={testarAPI} />
+            <View style={styles.linha}>
+                <Button title="Chamar Callback" onPress={()=>buscarDadosCallback(callbackDeExibicaoDeDados)} />
+                <Button title="Chamar Promise" onPress={testarPromise} />
+                <Button title="Chamar Await" onPress={testarAwait} />
+                <Button title="Chamar API" onPress={testarAPI} />
+            </View>
         </View>
     )
 }
@@ -100,6 +102,9 @@ const styles = StyleSheet.create({
         flex:.8,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    linha: {
+        flexDirection: 'row'
     }
 })
 export default Lista

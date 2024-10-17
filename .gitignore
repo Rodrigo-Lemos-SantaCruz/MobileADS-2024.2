@@ -3,7 +3,7 @@
 # dependencies
 node_modules/
 Telas/ListaChamadas.js
-
+Servicos/firebase.js
 # Expo
 .expo/
 dist/
