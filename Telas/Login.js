@@ -41,6 +41,7 @@ export default function Login() {
       <TextInput placeholder='Senha' onChangeText={(text)=>setSenha(text)} />
       <Button title='Calculadora' onPress={()=>ValidaComFirebase('CalculaNota')} />
       <Button title='Lista' onPress={()=>ValidaComFirebase('Lista')} />
+      <Button title='Camera' onPress={()=>ValidaComFirebase('Camera')} />
       <Button title='Cadastrar' onPress={()=>navigation.navigate('Criar')} />
       <StatusBar style="auto" />
     </View>

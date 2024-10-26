@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {"cameraPermission": "Permitir $(PRODUCT_NAME) acessar a câmera"}
+      ]
+    ]
   }
 }

@@ -3,6 +3,7 @@
 # dependencies
 node_modules/
 Telas/ListaChamadas.js
+Telas/CameraTeste.js
 Servicos/firebase.js
 # Expo
 .expo/
