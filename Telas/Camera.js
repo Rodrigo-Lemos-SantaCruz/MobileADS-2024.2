@@ -16,6 +16,16 @@ export default function App() {
         })
         .catch((err) => console.error(err))
   }
+  const salvarFoto = function() {
+    console.log('salvando foto...')
+    console.log(foto.uri)
+    fetch(foto.uri)
+      .then((resposta)=>{
+        return resposta.blob()
+      })
+      .then((blob)=>{console.log(blob)})
+      .catch((err)=>console.error(err))
+  }
   if (!permission) {
     // Camera permissions are still loading.
     return <View />;
@@ -35,6 +45,10 @@ export default function App() {
     return(
       <View style={styles.container}>
         <Image style={{width:'100%', height:'100%' }} source={{uri: foto.uri}} />
+        <View style={styles.buttonContainer}>
+          <Button title='Nova foto' onPress={()=>setFoto(null)} />
+          <Button title='Salvar' onPress={salvarFoto} />
+        </View>
       </View>
     )
   }
